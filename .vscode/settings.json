@@ -1,69 +1,74 @@
 {
-    // File formatting
-    // General settings
-    "editor.wordWrap": "off",
-    "files.trimTrailingWhitespace": true,
+  // File formatting
+  // General settings
+  "editor.wordWrap": "off",
+  "files.trimTrailingWhitespace": true,
 
-    // Language-specific settings
-    "[markdown]": {
-        "editor.detectIndentation": false,
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4,
-    },
-    "[makefile]": {
-        "editor.detectIndentation": false,
-        "editor.insertSpaces": false,
-        "editor.tabSize": 8,
-    },
-    "[asciidoc]": {
-        "editor.detectIndentation": false,
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-    },
-    "[shellscript]": {
-        "editor.detectIndentation": false,
-        "editor.insertSpaces": false,
-        "editor.tabSize": 8,
-    },
-    "[javascript]": {
-        "editor.detectIndentation": false,
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-    },
-    "[typescript]": {
-        "editor.detectIndentation": false,
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-    },
-    "files.associations": {
-        "*.adoc": "asciidoc",
-        "*.asc": "asciidoc",
-        "*.md": "markdown",
-        "*.sh": "shellscript",
-        "prerm": "shellscript",
-        "postinstall": "shellscript",
-        "*.js": "javascript",
-        "*.ts": "typescript",
-        "Makefile": "makefile"
-    },
+  // Language-specific settings
+  "[markdown]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "[makefile]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 8
+  },
+  "[asciidoc]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[shellscript]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 8
+  },
+  "[javascript]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "files.associations": {
+    "*.adoc": "asciidoc",
+    "*.asc": "asciidoc",
+    "*.md": "markdown",
+    "*.sh": "shellscript",
+    "prerm": "shellscript",
+    "postinstall": "shellscript",
+    "*.js": "javascript",
+    "*.ts": "typescript",
+    "Makefile": "makefile"
+  },
 
-    // Cucumber settings
-    "cucumber.features": [
-        "test/**/features/**/*.feature",
-    ],
-    "cucumber.glue": [
-        "test/**/features/**/*.ts",
-    ],
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/flutter/ephemeral": true,
-        "**/Flutter/ephemeral": true,
-        "**/.symlinks": true,
-        "**/.plugin_symlinks": true,
-        ".mule": true
-    },
+  // Cucumber settings
+  "cucumber.features": ["test/**/features/**/*.feature"],
+  "cucumber.glue": ["test/**/features/**/*.ts"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/flutter/ephemeral": true,
+    "**/Flutter/ephemeral": true,
+    "**/.symlinks": true,
+    "**/.plugin_symlinks": true,
+    ".mule": true,
+    "**/*.pdf": true,
+    "**/*.mp4": true,
+    "**/*.mov": true,
+    "**/*.avi": true,
+    "**/*.wmv": true,
+    "**/*.flv": true,
+    "**/*.mkv": true,
+    "**/*.webm": true,
+    "**/*.m4v": true
+  }
 }

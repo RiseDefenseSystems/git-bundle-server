@@ -8,3 +8,23 @@
 node_modules/
 
 *.so
+
+# Binary files and media
+*.pdf
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.webm
+*.m4v
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

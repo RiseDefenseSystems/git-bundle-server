@@ -1,0 +1,41 @@
+# SLSA Go Releaser Configuration
+# See: https://github.com/slsa-framework/slsa-github-generator/blob/main/internal/builders/go/README.md#configuration-file
+
+# The main package to build
+main: ./cmd/git-bundle-server
+
+# Binary name output
+binary: git-bundle-server
+
+# Build configuration
+build:
+  # Build flags
+  flags:
+    - -trimpath
+  # LD flags
+  ldflags:
+    - -s
+    - -w
+    - -X main.version={{.Version}}
+    - -X main.commit={{.Commit}}
+    - -X main.date={{.Date}}
+
+# Archive configuration
+archive:
+  format: tar.gz
+  name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}_{{.Arch}}"
+
+# Release configuration
+release:
+  github:
+    owner: git-ecosystem
+    name: git-bundle-server
+
+# Checksum configuration
+checksum:
+  name_template: "{{.ProjectName}}_{{.Version}}_checksums.txt"
+
+# SBOM configuration
+sbom:
+  - spdx-json
+  - cyclonedx-json
