@@ -89,7 +89,7 @@ func (r *repoProvider) CreateRepository(ctx context.Context, route string) (*Rep
 
 	err = r.WriteAllRoutes(ctx, repos)
 	if err != nil {
-		return nil, fmt.Errorf("warning: failed to write route file")
+		return nil, fmt.Errorf("failed to write route file: %w", err)
 	}
 
 	return &repo, nil

@@ -1,0 +1,33 @@
+2026-02-25 14:35:26.447 [info] (Windsurf) 2026-02-25 14:35:26.447 [INFO]: [windsurf#terminal] Shell integration DETECTED for unknown
+2026-02-25 14:35:27.971 [info] (Windsurf) 2026-02-25 14:35:27.971 [INFO]: [windsurf#terminal] Shell integration DETECTED for managed
+2026-02-25 14:35:28.003 [info] 2026/02/25 14:35:28 maxprocs: Leaving GOMAXPROCS=8: CPU quota undefined
+2026-02-25 14:35:28.028 [info] I0225 14:35:28.028337 24893 main.go:604] Setting GOMAXPROCS to 4
+2026-02-25 14:35:28.028 [info] I0225 14:35:28.028785 24893 main.go:819] Starting language server process with pid 24893
+2026-02-25 14:35:28.029 [info] I0225 14:35:28.029007 24893 server.go:359] Language server will attempt to listen on host 127.0.0.1
+2026-02-25 14:35:28.029 [info] I0225 14:35:28.029095 24893 server.go:366] Language server listening on random port at 55527
+2026-02-25 14:35:28.275 [info] I0225 14:35:28.275267 24893 server.go:500] Created extension server client at port 55526
+2026-02-25 14:35:28.313 [info] (Windsurf) 2026-02-25 14:35:28.313 [INFO]: Language server started
+2026-02-25 14:35:28.322 [info] (Windsurf) 2026-02-25 14:35:28.322 [INFO]: LS lspClient started successfully
+2026-02-25 14:35:28.542 [info] I0225 14:35:28.542568 24893 mcp_server_client_instance.go:383] [MCP] Attempting Streamable HTTP client for https://mcp.vercel.com with headers: map[]
+2026-02-25 14:35:28.542 [info] I0225 14:35:28.542661 24893 mcp_server_client_instance.go:286] [MCP] Establishing connection to MCP server...
+2026-02-25 14:35:28.717 [info] I0225 14:35:28.717368 24893 oauth.go:512] [MCP] Found 1 WWW-Authenticate header(s) in error: [Bearer error="invalid_token", error_description="No authorization provided", resource_metadata="https://mcp.vercel.com/.well-known/oauth-protected-resource"]
+2026-02-25 14:35:28.717 [info] I0225 14:35:28.717386 24893 oauth.go:521] [MCP] Parsing WWW-Authenticate header 1/1: Bearer error="invalid_token", error_description="No authorization provided", resource_metadata="https://mcp.vercel.com/.well-known/oauth-protected-resource"
+2026-02-25 14:35:28.717 [info] I0225 14:35:28.717427 24893 oauth.go:524] [MCP] Found resource_metadata URL in WWW-Authenticate: https://mcp.vercel.com/.well-known/oauth-protected-resource
+2026-02-25 14:35:28.850 [info] I0225 14:35:28.850360 24893 oauth.go:527] [MCP] Successfully discovered OAuth authorization server from error headers: https://mcp.vercel.com/.well-known/oauth-authorization-server
+2026-02-25 14:35:28.850 [info] I0225 14:35:28.850376 24893 mcp_server_client_instance.go:159] [MCP] Discovered OAuth metadata from error: https://mcp.vercel.com/.well-known/oauth-authorization-server
+2026-02-25 14:35:28.938 [info] I0225 14:35:28.938215 24893 mcp_server_client_instance.go:185] [MCP] Using discovered OAuth authorization server: https://mcp.vercel.com/.well-known/oauth-authorization-server
+2026-02-25 14:35:28.938 [info] I0225 14:35:28.938247 24893 mcp_server_client_instance.go:286] [MCP] Establishing connection to MCP server...
+2026-02-25 14:35:28.938 [info] I0225 14:35:28.938292 24893 oauth.go:48] [MCP] GetToken() called for key: mcp_token_https://mcp.vercel.com
+2026-02-25 14:35:28.982 [info] I0225 14:35:28.981939 24893 oauth.go:57] [MCP] GetSecretValue succeeded, value length: 292
+2026-02-25 14:35:29.276 [info] I0225 14:35:29.276076 24893 mcp_server_client_instance.go:443] [MCP] Trying SSE connection for https://mcp.vercel.com...
+2026-02-25 14:35:29.276 [info] I0225 14:35:29.276099 24893 mcp_server_client_instance.go:286] [MCP] Establishing connection to MCP server...
+2026-02-25 14:35:29.342 [info] I0225 14:35:29.342000 24893 oauth.go:512] [MCP] Found 1 WWW-Authenticate header(s) in error: [Bearer error="invalid_token", error_description="No authorization provided", resource_metadata="https://mcp.vercel.com/.well-known/oauth-protected-resource"]
+2026-02-25 14:35:29.342 [info] I0225 14:35:29.342031 24893 oauth.go:521] [MCP] Parsing WWW-Authenticate header 1/1: Bearer error="invalid_token", error_description="No authorization provided", resource_metadata="https://mcp.vercel.com/.well-known/oauth-protected-resource"
+2026-02-25 14:35:29.342 [info] I0225 14:35:29.342185 24893 oauth.go:524] [MCP] Found resource_metadata URL in WWW-Authenticate: https://mcp.vercel.com/.well-known/oauth-protected-resource
+2026-02-25 14:35:29.530 [info] I0225 14:35:29.530184 24893 oauth.go:527] [MCP] Successfully discovered OAuth authorization server from error headers: https://mcp.vercel.com/.well-known/oauth-authorization-server
+2026-02-25 14:35:29.530 [info] I0225 14:35:29.530231 24893 mcp_server_client_instance.go:159] [MCP] Discovered OAuth metadata from error: https://mcp.vercel.com/.well-known/oauth-authorization-server
+2026-02-25 14:35:29.615 [info] I0225 14:35:29.614985 24893 mcp_server_client_instance.go:185] [MCP] Using discovered OAuth authorization server: https://mcp.vercel.com/.well-known/oauth-authorization-server
+2026-02-25 14:35:29.615 [info] I0225 14:35:29.615290 24893 mcp_server_client_instance.go:286] [MCP] Establishing connection to MCP server...
+2026-02-25 14:35:29.615 [info] I0225 14:35:29.615309 24893 oauth.go:48] [MCP] GetToken() called for key: mcp_token_https://mcp.vercel.com
+2026-02-25 14:35:29.617 [info] I0225 14:35:29.617029 24893 oauth.go:57] [MCP] GetSecretValue succeeded, value length: 292
+2026-02-25 14:35:29.812 [info] E0225 14:35:29.811950 24893 mcp_server_client_instance.go:368] [MCP] All connection methods failed for https://mcp.vercel.com

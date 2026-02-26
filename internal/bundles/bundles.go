@@ -24,6 +24,7 @@ const (
 	BundleListJsonFilename string = "bundle-list.json"
 	BundleListFilename     string = "bundle-list"
 	RepoBundleListFilename string = "repo-bundle-list"
+	MaxBundles             int    = 5
 )
 
 type BundleHeader struct {
@@ -179,7 +180,7 @@ func (b *bundleProvider) WriteBundleList(ctx context.Context, list *BundleList, 
 			// Get the URI relative to the bundle server root
 			uri := strings.TrimPrefix(bundle.URI, uriBase)
 			if uri == bundle.URI {
-				panic("error resolving bundle URI paths")
+				return fmt.Errorf("failed to resolve bundle URI path: base URI '%s' does not match bundle URI '%s'", uriBase, bundle.URI)
 			}
 
 			fmt.Fprintf(
@@ -267,6 +268,7 @@ func (b *bundleProvider) GetBundleList(ctx context.Context, repo *core.Repositor
 	if err != nil {
 		return nil, fmt.Errorf("failed to open file: %w", err)
 	}
+	defer reader.Close()
 
 	var list BundleList
 	err = json.NewDecoder(reader).Decode(&list)
@@ -397,9 +399,7 @@ func (b *bundleProvider) CollapseList(ctx context.Context, repo *core.Repository
 	ctx, exitRegion := b.logger.Region(ctx, "bundles", "collapse_list")
 	defer exitRegion()
 
-	maxBundles := 5
-
-	if len(list.Bundles) <= maxBundles {
+	if len(list.Bundles) <= MaxBundles {
 		return nil
 	}
 
@@ -409,7 +409,7 @@ func (b *bundleProvider) CollapseList(ctx context.Context, repo *core.Repository
 
 	maxTimestamp := int64(0)
 
-	for i := range keys[0 : len(keys)-maxBundles+1] {
+	for i := range keys[0 : len(keys)-MaxBundles+1] {
 		bundle := list.Bundles[keys[i]]
 
 		if bundle.CreationToken > maxTimestamp {
