@@ -36,7 +36,7 @@ func (c *commandExecutor) buildCmd(ctx context.Context, command string, args ...
 	return cmd, nil
 }
 
-func (c *commandExecutor) applyOptions(ctx context.Context, cmd *exec.Cmd, settings []Setting) {
+func (c *commandExecutor) applyOptions(ctx context.Context, cmd *exec.Cmd, settings []Setting) error {
 	for _, setting := range settings {
 		switch setting.Key {
 		case StdinKey:
@@ -48,13 +48,14 @@ func (c *commandExecutor) applyOptions(ctx context.Context, cmd *exec.Cmd, setti
 		case EnvKey:
 			env, ok := setting.Value.([]string)
 			if !ok {
-				panic("incorrect env setting type")
+				return c.logger.Errorf(ctx, "incorrect env setting type: expected []string, got %T", setting.Value)
 			}
 			cmd.Env = append(cmd.Env, env...)
 		default:
-			panic("invalid cmdSettingKey")
+			return c.logger.Errorf(ctx, "invalid cmdSettingKey: %s", setting.Key)
 		}
 	}
+	return nil
 }
 
 func (c *commandExecutor) runCmd(ctx context.Context, cmd *exec.Cmd) (int, error) {
@@ -93,6 +94,9 @@ func (c *commandExecutor) Run(ctx context.Context, command string, args []string
 	}
 
 	c.applyOptions(ctx, cmd, settings)
+	if err != nil {
+		return -1, err
+	}
 
 	return c.runCmd(ctx, cmd)
 }
